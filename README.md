@@ -25,12 +25,11 @@ python3 evaluate.py -data <data_path> --resume models/checkpoint_cars_1-e4_decay
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
 | After First Train                               | 93.906        |
-|-------------------------------------------------|---------------|
 
 
 ### Second Training Step
 The second training step can be seen as follow:
-![Alt text](res/second_training.PNG?raw=true "Second Training Step")
+![Alt text](res/second_train.PNG?raw=true "Second Training Step")
 Because the training is fine-tuning process, we choose lr 0.01.
 ```
 python3 train_second_model.py -data <data_path> --resume <name_ckpt_init_train> --lr 0.01 --epoch 1000
@@ -45,7 +44,6 @@ python3 evaluate.py -data <data_path> --resume <ckpt_after_second_training> -pre
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
 | After Second Train only output 1                | 94.145        |
-|-------------------------------------------------|---------------|
 
 Test saved model on stanford cars dataset using only output_1 and output_2
 ```
@@ -55,5 +53,4 @@ python3 evaluate.py -data <data_path> --resume <ckpt_after_second_training> -pre
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
 | After Second Train output 1 and 2               | 94.266        |
-|-------------------------------------------------|---------------|
 
