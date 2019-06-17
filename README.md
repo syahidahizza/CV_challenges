@@ -6,7 +6,7 @@ In general, there are 2 training steps. First, fit network with data augmented b
 
 Requirement :
 1. Download cars data, and put it into cars/
-2. Download both first and second training checkpoint and put them under models/
+2. Download both [first](https://drive.google.com/file/d/1pOwBUhDfI1D9qXfC60X6ieJ2vdQwx8Mx/view?usp=sharing) and [second](https://drive.google.com/file/d/12DZrvDsxdKxcZyf9uQWmKFAMFU58dAV8/view?usp=sharing) training checkpoint and put them under models/
 
 ### First Training Step
 The first Training step is straight-forward. The main different only on 25 random augmentation.
@@ -32,13 +32,13 @@ The second training step can be seen as follow:
 ![Alt text](res/second_train.PNG?raw=true "Second Training Step")
 Because the training is fine-tuning process, we choose lr 0.01.
 ```
-python3 train_second_model.py -data <data_path> --resume <name_ckpt_init_train> --lr 0.01 --epoch 1000
+python3 train_second_model.py -data <data_path> --resume models/checkpoint_cars_1-e4_decay_real.pth.tar --lr 0.01 --epoch 1000
 
 ```
 Test saved model on stanford cars dataset using only output_1
 
 ```
-python3 evaluate.py -data <data_path> --resume <ckpt_after_second_training> -pred_both False
+python3 evaluate.py -data <data_path> --resume models/ckpt_combined_network.pth.tar -pred_both False
 
 ```
 | Scenario                                        | Accuracy      |
@@ -47,7 +47,7 @@ python3 evaluate.py -data <data_path> --resume <ckpt_after_second_training> -pre
 
 Test saved model on stanford cars dataset using only output_1 and output_2
 ```
-python3 evaluate.py -data <data_path> --resume <ckpt_after_second_training> -pred_both True
+python3 evaluate.py -data <data_path> --resume models/ckpt_combined_network.pth.tar -pred_both True
 
 ```
 | Scenario                                        | Accuracy      |
