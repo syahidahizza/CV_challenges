@@ -55,9 +55,6 @@ class SubPolicy(object):
             "invert": lambda img, magnitude: ImageOps.invert(img)
         }
 
-        # self.name = "{}_{:.2f}_and_{}_{:.2f}".format(
-        #     operation1, ranges[operation1][magnitude_idx1],
-        #     operation2, ranges[operation2][magnitude_idx2])
         self.p1 = p1
         self.operation1 = func[operation1]
         self.magnitude1 = ranges[operation1][magnitude_idx1]
@@ -74,16 +71,6 @@ class SubPolicy(object):
         
 
 class ImageNetPolicy(object):
-    """ Randomly choose one of the best 24 Sub-policies on ImageNet.
-        Example:
-        >>> policy = ImageNetPolicy()
-        >>> transformed = policy(image)
-        Example as a PyTorch Transform:
-        >>> transform=transforms.Compose([
-        >>>     transforms.Resize(256),
-        >>>     ImageNetPolicy(),
-        >>>     transforms.ToTensor()])
-    """
     def __init__(self, fillcolor=(128, 128, 128)):
         self.policies = [
             SubPolicy(0.4, "posterize", 8, 0.6, "rotate", 9, fillcolor),
@@ -124,17 +111,8 @@ class ImageNetPolicy(object):
 
     def __repr__(self):
         return "AutoAugment ImageNet Policy"
+    
 class ImageNetPolicyTest(ImageNetPolicy):
-    """ Randomly choose one of the best 24 Sub-policies on ImageNet.
-        Example:
-        >>> policy = ImageNetPolicy()
-        >>> transformed = policy(image)
-        Example as a PyTorch Transform:
-        >>> transform=transforms.Compose([
-        >>>     transforms.Resize(256),
-        >>>     ImageNetPolicy(),
-        >>>     transforms.ToTensor()])
-    """
     def __init__(self, number, fillcolor=(128, 128, 128)):
         super().__init__(fillcolor)
         self.policies = [self.policies[number]]
