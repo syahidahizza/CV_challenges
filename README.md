@@ -58,4 +58,4 @@ python3 evaluate.py -data <data_path> --resume models/ckpt_combined_network.pth.
 |-------------------------------------------------|---------------|
 | After Second Train output 1 and 2               | 94.266*       |
 
-(*) : The accuracy may be different due to the probability factor in augmentation function. However, the difference is under 1%.
+(*) : The accuracy may be different due to the probability factor in augmentation function. However, by performing multiple experimentations, we are confident that the difference is under 1%.
