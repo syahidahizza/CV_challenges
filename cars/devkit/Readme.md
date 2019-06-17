@@ -22,20 +22,5 @@ Descriptions of the files are as follows:
 -cars_test_annos.mat:
   Same format as 'cars_train_annos.mat', except the class is not provided.
 
-----------------------------------------
-Submission file format
-----------------------------------------
-Files for submission should be .txt files with the class prediction for
-image M on line M. Note that image M corresponds to the Mth annotation in
-the provided annotation file. An example of a file in this format is
-train_perfect_preds.txt
-
-Included in the devkit are a script for evaluating training accuracy,
-eval_train.m. Usage is:
-
-(in MATLAB)
->> [accuracy, confusion_matrix] = eval_train('train_perfect_preds.txt')
-
-If your training predictions work with this function then your testing
-predictions should be good to go for the evaluation server, assuming
-that they're in the same format as your training predictions.
+-cars_test_annos_withlabels.mat:
+  the ground-truth class of the test images.  
