@@ -3,7 +3,7 @@
 [PPT LINK for detail algorithm](https://docs.google.com/presentation/d/1mSd2WATNZr9X9gWaKbN3GbovtA3jijJhMFhMRHw2hf8/edit?usp=sharing)
 
 In general, there are 2 training steps : 
-1. fit network with augmented data by 25 chosen augmentation. 
+1. Fit network with augmented data by 25 chosen augmentation. 
 2. Generate a heatmap, then crop + stitch the initial image, and fine-tune the network. 
 
 We are using Inception V4 as base model for all the experiment.
