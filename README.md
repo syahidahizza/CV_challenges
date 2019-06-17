@@ -2,14 +2,14 @@
 
 [PPT LINK for detail algorithm](https://docs.google.com/presentation/d/1mSd2WATNZr9X9gWaKbN3GbovtA3jijJhMFhMRHw2hf8/edit?usp=sharing)
 
-In general, there are 2 training steps. First, fit network with data augmented by 25 chosen augmentation. Second, generate heatmap, and crop + stitch the initial image then fine-tune the network. We are using Inception V4 as base model for all the experiment.
+In general, there are 2 training steps. First, fit network with augmented data by 25 chosen augmentation. Second, generate heatmap, and crop + stitch the initial image, then fine-tune the network. We are using Inception V4 as base model for all the experiment.
 
 Requirement :
 1. Download cars data, and put it into cars/
 2. Download both [first](https://drive.google.com/file/d/1pOwBUhDfI1D9qXfC60X6ieJ2vdQwx8Mx/view?usp=sharing) and [second](https://drive.google.com/file/d/12DZrvDsxdKxcZyf9uQWmKFAMFU58dAV8/view?usp=sharing) training checkpoint and put them under models/
 
 ### First Training Step
-The first Training step is straight-forward. The main different only on 25 random augmentation.
+The first Training step is straight-forward. The main different only on 25 random augmentations.
 ![Alt text](res/first_training.PNG?raw=true "First Training Step")
 
 
