@@ -28,7 +28,7 @@ python3 evaluate.py -data <data_path> --resume models/checkpoint_cars_1-e4_decay
 ```
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
-| After First Train                               | 93.906        |
+| After First Train                               | 93.906*       |
 
 
 ### Second Training Step
@@ -47,7 +47,7 @@ python3 evaluate.py -data <data_path> --resume models/ckpt_combined_network.pth.
 ```
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
-| After Second Train only output 1                | 94.145        |
+| After Second Train only output 1                | 94.145*       |
 
 Test saved model on stanford cars dataset using only output_1 and output_2
 ```
@@ -56,5 +56,6 @@ python3 evaluate.py -data <data_path> --resume models/ckpt_combined_network.pth.
 ```
 | Scenario                                        | Accuracy      |
 |-------------------------------------------------|---------------|
-| After Second Train output 1 and 2               | 94.266        |
+| After Second Train output 1 and 2               | 94.266*       |
 
+(*) : The accuracy may be different due to the probability factor in augmentation function. However, the difference is under 1%.
