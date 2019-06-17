@@ -40,7 +40,6 @@ class SubPolicy(object):
                 img.size, Image.AFFINE, (1, 0, 0, 0, 1, magnitude * img.size[1] * random.choice([-1, 1])),
                 fillcolor=fillcolor),
             "rotate": lambda img, magnitude: rotate_with_fill(img, magnitude),
-            # "rotate": lambda img, magnitude: img.rotate(magnitude * random.choice([-1, 1])),
             "color": lambda img, magnitude: ImageEnhance.Color(img).enhance(1 + magnitude * random.choice([-1, 1])),
             "posterize": lambda img, magnitude: ImageOps.posterize(img, magnitude),
             "solarize": lambda img, magnitude: ImageOps.solarize(img, magnitude),
