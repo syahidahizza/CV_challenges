@@ -67,8 +67,6 @@ class SubPolicy(object):
         if random.random() < self.p2: img = self.operation2(img, self.magnitude2)
         return img
 
-        
-
 class ImageNetPolicy(object):
     def __init__(self, fillcolor=(128, 128, 128)):
         self.policies = [
